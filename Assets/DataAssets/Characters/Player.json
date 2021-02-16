@@ -1,0 +1,71 @@
+﻿{
+	"Characters": [
+		{
+			"NameId": "Character1",
+			"PortraitName": "Common/Panel_SelectCharacter_Character1",
+			"ClassName": "Character1",
+			"PrefabName": "Character1",
+			"GroupType": "Players",
+			"Weapon": "MachineGun",
+			"Behaviour": "",
+			"Attributes": [
+				{
+					"Value": 46.0,
+					"MinValue": 1,
+					"MaxValue": 46.0,
+					"FormulaType": "Addition",
+					"AttributeName": "MovementSpeedAttr"
+				},
+				{
+					"Value": 8.0,
+					"MinValue": 1,
+					"MaxValue": 8.0,
+					"FormulaType": "Addition",
+					"AttributeName": "RotationAttr"
+				},
+				{
+					"Value": 200,
+					"MinValue": 100,
+					"MaxValue": 400,
+					"FormulaType": "Addition",
+					"AttributeName": "HealthAttr",
+					"UpdateLevels": [
+						{
+							"IncreaseStep": 20.0
+						}
+					]
+				},
+				{
+					"Value": 8,
+					"MinValue": 1,
+					"MaxValue": 20.0,
+					"FormulaType": "Addition",
+					"AttributeName": "DefenseAttr"
+				}
+			],
+			"Components": [
+				{
+					"ClassName": "CharacterAnimationsCharacters"
+				},
+				{
+					"ClassName": "InteractionComponent"
+				},
+				{
+					"ClassName": "InventoryComponent"
+				},
+				{
+					"ClassName": "HealthComponent"
+				},
+				{
+					"ClassName": "CombatComponent"
+				},
+				{
+					"ClassName": "MovementWaypointsComponent"
+				},
+				{
+					"ClassName": "DeathPlayerComponent"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,75 @@
+﻿{
+	"Characters": [
+		{
+			"NameId": "EnemyType1",
+			"PortraitName": "UI/Portraits/portrait_type1",
+			"ClassName": "EnemyType1",
+			"PrefabName": "Enemy_Type1_big",
+			"Behaviour": "InUse",
+			"GroupType": "Enemy",
+			"Weapon": "MachineGun",
+			"Attributes": [
+				{
+					"Value": 290.0,
+					"MinValue": 0.0,
+					"MaxValue": 350.0,
+					"FormulaType": "Addition",
+					"AttributeName": "MovementSpeedAttr"
+				},
+				{
+					"Value": 13.0,
+					"MinValue": 1,
+					"MaxValue": 15.0,
+					"FormulaType": "Addition",
+					"AttributeName": "RotationAttr"
+				},
+				{
+					"Value": 100,
+					"MinValue": 1,
+					"MaxValue": 200,
+					"FormulaType": "Addition",
+					"AttributeName": "HealthAttr",
+					"UpdateLevels": [
+						{
+							"IncreaseStep": 20.0
+						}
+					]
+				},
+				{
+					"Value": 12,
+					"MinValue": 1,
+					"MaxValue": 17.0,
+					"FormulaType": "Addition",
+					"AttributeName": "AttackAttr"
+				},
+				{
+					"Value": 8,
+					"MinValue": 1,
+					"MaxValue": 20.0,
+					"FormulaType": "Addition",
+					"AttributeName": "DefenseAttr"
+				}
+			],
+			"Components": [
+				{
+					"ClassName": "HealthComponent"
+				},
+				{
+					"ClassName": "CharacterAnimationsAI"
+				},
+				{
+					"ClassName": "MovementRigidbodyToDirectionComponent"
+				},
+				{
+					"ClassName": "CombatComponent"
+				},
+				{
+					"ClassName": "DeathAIComponent"
+				},
+				{
+					"ClassName": "NormalHitComponent"
+				}
+			]
+		}
+	]
+}
