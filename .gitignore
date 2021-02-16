@@ -28,6 +28,7 @@ storage.ide
 # =============== #
 Temp/
 Library/
+Assets/ThirdParty/NGUI/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
