@@ -12,6 +12,7 @@ public class EntityController : MonoBehaviour {
     [SerializeField] private Transform tr = null;
     private EntityData entityData = new EntityData();
 
+    
     private void Awake()
     {
         tr = this.transform;
@@ -72,12 +73,13 @@ public class EntityController : MonoBehaviour {
 
         if (attack == null) {Debug.Log("null");return;}
         
-        //do something to attack
-        //target.GetComponent<ITarget>().GotHit(attack.Value);
+        // do something to attack
+        // target.GetComponent<ITarget>().GotHit(attack.Value);
+        
 
-        //initial value was 100 points
+        // initial value was 100 points
         // attack of 30
-        //so we add -30 points to our defense
+        // so we add -30 points to our defense
         var levels = new List<BaseAttribute.LevelsAttribute>(5);
 
         for (var i = 0; i < 5; ++i)

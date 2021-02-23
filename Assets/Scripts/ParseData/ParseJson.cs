@@ -49,12 +49,30 @@ namespace eskemagames
         [System.NonSerialized] public GameEnums.GroupTypes Group = GameEnums.GroupTypes.Max;
         public string Weapon = System.String.Empty;
         public List<AttributesJsonData> Attributes = new List<AttributesJsonData>();
+        public List<ComponentJsonData> Components = new List<ComponentJsonData>(); //NEW LINE
     }
 
     [System.Serializable]
     public class PARSERootCharactersJsonData
     {
         public List<CharacterParseJsonData> Characters = new List<CharacterParseJsonData>();
+    }
+
+    #endregion
+    
+    
+    #region components
+
+    [System.Serializable]
+    public class ComponentJsonData
+    {
+        public string ClassName = System.String.Empty;
+    }
+    
+    [System.Serializable]
+    public class PARSERootComponentsJsonData
+    {
+        public List<ComponentJsonData> Components = new List<ComponentJsonData>();
     }
 
     #endregion

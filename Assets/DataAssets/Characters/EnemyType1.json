@@ -6,7 +6,7 @@
 			"ClassName": "EnemyType1",
 			"PrefabName": "Enemy_Type1_big",
 			"Behaviour": "InUse",
-			"GroupType": "Enemy",
+			"GroupType": "Enemies",
 			"Weapon": "MachineGun",
 			"Attributes": [
 				{

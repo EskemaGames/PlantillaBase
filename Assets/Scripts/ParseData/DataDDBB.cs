@@ -11,11 +11,11 @@ using UnityEngine;
 public class DataDDBB : MonoBehaviour
 {
     [SerializeField] TextAsset[] charactersTextList = null;
-
+    [SerializeField] TextAsset componentsList = null;
     
     private static DataDDBB instance = null;
     private List<EntityData> charactersData = new List<EntityData>();
-
+ 
     public static DataDDBB Instance
     {
         get { return instance; }
@@ -43,6 +43,7 @@ public class DataDDBB : MonoBehaviour
         //create the characters for the data parsed
         charactersData = new List<EntityData>(50);
 
+        ParseComponents(componentsList.text);
         ParseCharactersData(charactersTextList, ref characterIdCounterTmp);
     }
     
@@ -93,6 +94,7 @@ public class DataDDBB : MonoBehaviour
                     allData.Characters[cnt].ClassName,
                     allData.Characters[cnt].Behaviour,
                     allData.Characters[cnt].Weapon,
+                    allData.Characters[cnt].PrefabName,
                     groupType,
                     attributesParsed);
 
@@ -102,12 +104,41 @@ public class DataDDBB : MonoBehaviour
             }
         }
     }
+    
+    private void ParseComponents(string jsonfile)
+    {
+        PARSERootComponentsJsonData allData = null;
 
+        try
+        {
+            allData = JsonUtility.FromJson<PARSERootComponentsJsonData>(jsonfile);
+        }
+        catch (Exception)
+        {
+            Debug.LogError("error parsing components json");
+            return;
+        }
+        
+        var componentNames = new List<string>(10);
+        
+        for (var cnt = 0; cnt < allData.Components.Count; ++cnt)
+        {
+            componentNames.Add(allData.Components[cnt].ClassName);
+        }
+
+        SetFactoryData(componentNames);
+    }
+    
     #endregion
 
 
     #region internal parse of elements
 
+    private void SetFactoryData(List<string> names)
+    {
+        FactoryComponents.Instance.Init(names);
+    }
+    
     private List<BaseAttribute> ParseAttributes(List<AttributesJsonData> attributes)
     {
         //parse the character attributes

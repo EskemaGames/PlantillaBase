@@ -17,11 +17,12 @@ namespace eskemagames
             public string PrefabName { get; private set; }
             public GameEnums.GroupTypes GroupType { get; private set; }
             private AttributesAndModifiersController attributesAndModifiersController = new AttributesAndModifiersController();
-
+    
             public AttributesAndModifiersController GetAttributesController
             {
                 get { return attributesAndModifiersController; }
             }
+
 
             
             #region constructor
@@ -37,6 +38,7 @@ namespace eskemagames
                 string classname,
                 string behaviour,
                 string weapon,
+                string prefabName,
                 GameEnums.GroupTypes group,
                 List<BaseAttribute> attributes)
             {
@@ -46,6 +48,7 @@ namespace eskemagames
                 ClassName = classname;
                 Behaviour = behaviour;
                 Weapon = weapon;
+                PrefabName = prefabName;
                 GroupType = group;
                 attributesAndModifiersController.AddAttributes(attributes);
             }
@@ -59,6 +62,7 @@ namespace eskemagames
                 PortraitName = data.PortraitName;
                 Behaviour = data.Behaviour;
                 Weapon = data.Weapon;
+                PrefabName = data.PrefabName;
                 GroupType = data.GroupType;
                 attributesAndModifiersController = data.attributesAndModifiersController;
             }
